@@ -23,7 +23,18 @@ var moduleMasses = []int{
 }
 
 func calculateFuel(mass int) (fuel int) {
-	fuel = int(math.Floor(float64(mass)/3.0) - 2)
+	calc := func(i int) int { return int(math.Floor(float64(i)/3.0) - 2) }
+
+	p := calc(mass)
+	fuel += p
+	for {
+		p = calc(p)
+		if p <= 0 {
+			break
+		}
+		fuel += p
+	}
+
 	return
 }
 

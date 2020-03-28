@@ -10,8 +10,8 @@ func Test_calculate(t *testing.T) {
 	}{
 		{"Fuel: 12", 12, 2},
 		{"Fuel: 14", 14, 2},
-		{"Fuel: 1969", 1969, 654},
-		{"Fuel: 100756", 100756, 33583},
+		{"Fuel: 1969", 1969, 966},
+		{"Fuel: 100756", 100756, 50346},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
