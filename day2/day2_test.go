@@ -24,3 +24,46 @@ func Test_calculate(t *testing.T) {
 		})
 	}
 }
+
+func Test_reverse(t *testing.T) {
+	type args struct {
+		in     []int
+		result int
+	}
+	tests := []struct {
+		name     string
+		args     args
+		wantNoun int
+		wantVerb int
+	}{
+		{
+			name: "Test for 9706670",
+			args: args{
+				in:     puzzleInput,
+				result: 9706670,
+			},
+			wantNoun: 12,
+			wantVerb: 2,
+		},
+		{
+			name: "Test for 19690720",
+			args: args{
+				in:     puzzleInput,
+				result: 19690720,
+			},
+			wantNoun: 25,
+			wantVerb: 52,
+		},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			gotNoun, gotVerb := reverse(tt.args.in, tt.args.result)
+			if gotNoun != tt.wantNoun {
+				t.Errorf("reverse() gotNoun = %v, want %v", gotNoun, tt.wantNoun)
+			}
+			if gotVerb != tt.wantVerb {
+				t.Errorf("reverse() gotVerb = %v, want %v", gotVerb, tt.wantVerb)
+			}
+		})
+	}
+}

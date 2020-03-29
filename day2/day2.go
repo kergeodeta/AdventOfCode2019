@@ -80,6 +80,31 @@ func calculate(in []int) (out []int) {
 	return
 }
 
+func reverse(in []int, result int) (noun, verb int) {
+	var tmpIn []int
+	tmpIn = append(tmpIn, in...)
+
+	for noun = 0; noun <= 99; noun++ {
+		for verb = 0; verb <= 99; verb++ {
+			tmpIn[1] = noun
+			tmpIn[2] = verb
+			tmpRes := calculate(tmpIn)
+
+			if tmpRes[0] == result {
+				return
+			}
+		}
+	}
+
+	log.Fatalf("Cannot determine the pairs what gives you the result %d\n", result)
+	return
+}
+
 func Run() {
+	// Part #1
 	fmt.Println(calculate(puzzleInput))
+
+	// Part #2
+	noun, verb := reverse(puzzleInput, 19690720)
+	fmt.Println(100*noun + verb)
 }
