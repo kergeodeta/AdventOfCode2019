@@ -70,7 +70,7 @@ func calculate(in []int) (out []int) {
 		case 2:
 			result = out[arg1] * out[arg2]
 		default:
-			log.Fatalf("Incorrect operation code! Program exiting.")
+			log.Fatalf("Incorrect operation code (%d)! Program exiting.\n", code)
 		}
 
 		out[rPos] = result
