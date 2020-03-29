@@ -4,7 +4,7 @@
 //  F = floor(m / 3) - 2
 //  - Required fuel (F)
 //  - Mass of the module (m)
-package main
+package day1
 
 import (
 	"fmt"
