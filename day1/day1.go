@@ -38,7 +38,7 @@ func calculateFuel(mass int) (fuel int) {
 	return
 }
 
-func main() {
+func Run() {
 	total := 0
 	for _, mass := range moduleMasses {
 		total += calculateFuel(mass)
